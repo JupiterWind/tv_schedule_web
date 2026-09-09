@@ -82,7 +82,7 @@ def build_today_schedule():
         for name, (channel_id, genre_code, channel_no) in channels.items():
             try:
                 programs = fetch_today_schedule(channel_id, genre_code)
-                filtered = [p for p in programs if p["time"] >= "19:00"]
+                filtered = [p for p in programs if p["time"] >= "18:00"]
                 if filtered:
                     result[genre].append({
                         "channel": name,
