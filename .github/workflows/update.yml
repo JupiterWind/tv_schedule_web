@@ -19,6 +19,10 @@ jobs:
         with:
           version: "latest" # 또는 사용 중인 특정 uv 버전 명시 (예: "0.5.0")
 
+      # 파이썬 버전 명시 (uv sync가 부모 파이썬을 안정적으로 찾도록 권장)
+      - name: Set up Python
+        run: uv python install
+
       - name: Sync dependencies
         run: uv sync
 
