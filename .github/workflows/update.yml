@@ -24,7 +24,7 @@ jobs:
 
       - name: Run crawler
         working-directory: docs
-        run: uv run --project .. schedule_crawler.py
+        run: uv run --project .. --no-project-install schedule_crawler.py
 
       - name: Commit updated schedule.json
         run: |
