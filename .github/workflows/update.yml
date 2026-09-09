@@ -27,6 +27,7 @@ jobs:
         run: uv sync
 
       - name: Run crawler
+        working-directory: src
         run: uv run --project .. schedule_crawler.py
 
       - name: Commit updated schedule.json
