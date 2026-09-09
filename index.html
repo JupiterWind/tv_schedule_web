@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>오늘의 편성표</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        max-width: 720px;
+        margin: 40px auto;
+        padding: 0 16px;
+      }
+      h1 {
+        font-size: 20px;
+      }
+      h2 {
+        font-size: 16px;
+        margin-top: 32px;
+        border-bottom: 2px solid #333;
+        padding-bottom: 4px;
+      }
+      .channel {
+        margin-top: 16px;
+      }
+      .channel-name {
+        font-weight: bold;
+        margin-bottom: 6px;
+      }
+      .channel-no {
+        color: #999;
+        font-weight: normal;
+        font-size: 13px;
+      } /* 채널 번호 스타일 */
+      .program {
+        display: flex;
+        gap: 12px;
+        padding: 4px 8px;
+        font-size: 14px;
+        border-radius: 4px;
+      }
+      .program.current {
+        background: #fff3cd;
+      }
+      .time {
+        color: #666;
+        width: 50px;
+        flex-shrink: 0;
+      }
+      .title {
+        font-weight: 500;
+      }
+      .sub {
+        color: #888;
+        font-size: 13px;
+      }
+      #status {
+        color: #888;
+        font-size: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>오늘의 편성표 (오후 6시 이후)</h1>
+    <p id="status">불러오는 중...</p>
+    <div id="content"></div>
+
+    <script>
+      async function loadSchedule() {
+        try {
+          const res = await fetch("schedule.json");
+          const data = await res.json();
+          render(data);
+        } catch (e) {
+          document.getElementById("status").textContent =
+            "schedule.json을 불러오지 못했습니다. 같은 폴더에서 로컬 서버로 실행 중인지 확인하세요.";
+        }
+      }
+
+      function toMinutes(timeStr) {
+        const [h, m] = timeStr.split(":").map(Number);
+        return h * 60 + m;
+      }
+
+      function findCurrentIndex(programs) {
+        const now = new Date();
+        const nowMin = now.getHours() * 60 + now.getMinutes();
+        let currentIdx = -1;
+        for (let i = 0; i < programs.length; i++) {
+          if (toMinutes(programs[i].time) <= nowMin) {
+            currentIdx = i;
+          } else {
+            break;
+          }
+        }
+        return currentIdx;
+      }
+
+      function render(data) {
+        document.getElementById("status").remove();
+        const content = document.getElementById("content");
+
+        for (const [genre, channels] of Object.entries(data)) {
+          if (channels.length === 0) continue;
+
+          const genreSection = document.createElement("h2");
+          genreSection.textContent = genre;
+          content.appendChild(genreSection);
+
+          for (const { channel, channel_no, programs } of channels) {
+            const channelDiv = document.createElement("div");
+            channelDiv.className = "channel";
+
+            const nameEl = document.createElement("div");
+            nameEl.className = "channel-name";
+            // 채널명 옆에 채널 번호를 [ ] 형태로 표시
+            nameEl.innerHTML = channel_no
+              ? `${channel} <span class="channel-no">[${channel_no}]</span>`
+              : channel;
+            channelDiv.appendChild(nameEl);
+
+            const currentIdx = findCurrentIndex(programs);
+
+            programs.forEach((p, i) => {
+              const row = document.createElement("div");
+              row.className = "program" + (i === currentIdx ? " current" : "");
+              row.innerHTML = `
+          <span class="time">${p.time}</span>
+          <span>
+            <span class="title">${p.title}</span>
+            ${p.sub_title ? `<span class="sub"> · ${p.sub_title}</span>` : ""}
+          </span>
+        `;
+              channelDiv.appendChild(row);
+            });
+            content.appendChild(channelDiv);
+          }
+        }
+      }
+
+      loadSchedule();
+    </script>
+  </body>
+</html>
