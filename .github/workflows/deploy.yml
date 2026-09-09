@@ -1,0 +1,21 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main] # main 브랜치에 push될 때마다 실행 (master라면 master로 변경)
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: src # 배포할 대상 폴더명을 지정합니다.
+          branch: gh-pages # 배포된 파일들이 저장될 브랜치 이름입니다.
