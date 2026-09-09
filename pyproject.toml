@@ -1,0 +1,19 @@
+[project]
+name = "tv-schedule-web"
+version = "0.1.0"
+description = "유플러스 티비 편성표 중 당일 오후 6시 이후, 지정된 해외축구/해외드라마/영화 채널만 추려서 JSON파일로 저장"
+readme = "README.md"
+authors = [
+    { name = "JupiterWind", email = "hasiyara@naver.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "requests>=2.34.2",
+]
+
+[project.scripts]
+tv-schedule-web = "tv_schedule_web:main"
+
+[build-system]
+requires = ["uv_build>=0.12.7,<0.13.0"]
+build-backend = "uv_build"
