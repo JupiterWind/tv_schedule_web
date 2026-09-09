@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          sparse-checkout: . # 필요한 경우 전체 체크아웃 대신 옵션 사용 가능
 
       # setup-uv 버전을 v3에서 v5로 업데이트하여 Node.js 24 호환성 해결
       - name: Install uv
