@@ -60,10 +60,10 @@ def fetch_today_schedule(channel_id: str, genre_code: str):
         "urcBrdCntrTvChnlId": channel_id,
         "urcBrdCntrTvChnlGnreCd": genre_code,
     }
-    #res = requests.get(BASE_URL, params=params, headers=HEADERS, timeout=7)
-    session = requests.Session()
-    session.headers.update(HEADERS)
-    res = session.get(BASE_URL, params=params,timeout=7)
+    res = requests.get(BASE_URL, params=params, headers=HEADERS, timeout=7)
+    #session = requests.Session()
+    #session.headers.update(HEADERS)
+    #res = session.get(BASE_URL, params=params,timeout=7)
     res.raise_for_status()
     data = res.json()
 
