@@ -8,8 +8,13 @@ BASE_URL = "https://www.lguplus.com/uhdc/fo/prdv/chnlgid/v1/tv-schedule-list"
 HEADERS = {
     "accept": "application/json, text/plain, */*",
     "accept-language": "ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7",
+    "origin": "https://www.lguplus.com",
     "referer": "https://www.lguplus.com/iptv/channel-guide",
     "x-menu-url": "/iptv/channel-guide",
+    "x-user-agent-type": "PC",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-origin",
     "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
 }
 
