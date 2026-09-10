@@ -1,4 +1,5 @@
-import requests
+#import requests
+from curl_cffi import requests
 import time
 import json
 from datetime import date
@@ -14,8 +15,6 @@ HEADERS = {
     "sec-fetch-dest": "empty",
     "sec-fetch-mode": "cors",
     "sec-fetch-site": "same-origin",
-    "x-datadog-origin": "rum",
-    "x-menu-url":"/iptv/channel-guide",
 }
 
 # 장르: {채널명: (채널ID, 장르코드, 채널번호)}
@@ -60,7 +59,7 @@ def fetch_today_schedule(channel_id: str, genre_code: str):
         "urcBrdCntrTvChnlId": channel_id,
         "urcBrdCntrTvChnlGnreCd": genre_code,
     }
-    res = requests.get(BASE_URL, params=params, headers=HEADERS, timeout=7)
+    res = requests.get(BASE_URL, params=params, headers=HEADERS, timeout=7,impersonate="chrome")
     #session = requests.Session()
     #session.headers.update(HEADERS)
     #res = session.get(BASE_URL, params=params,timeout=7)
