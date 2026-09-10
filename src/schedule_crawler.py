@@ -1,4 +1,3 @@
-# lguplus_schedule_crawler.py
 import requests
 import time
 import json
@@ -44,7 +43,6 @@ CHANNELS = {
         "CNN International":("729","03","200"),
         "디스커버리":("610","04","194"),
         "히스토리":("664","04","218"),
-        "NHK World-JAPAN":("669","03","207"),
         "NHK World Premium":("633","03","209"),
     }
 }
