@@ -11,7 +11,11 @@ HEADERS = {
     "referer": "https://www.lguplus.com/iptv/channel-guide",
     "x-menu-url": "/iptv/channel-guide",
     "user-agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.5 Mobile/15E148 Safari/604.1",
-    "sec-ch-ua":"Chromium ;v= 152 , Not?A_Brand ;v= 24 , Google Chrome ;v= 152",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-origin",
+    "x-datadog-origin": "rum",
+    "x-menu-url":"/iptv/channel-guide",
 }
 
 # 장르: {채널명: (채널ID, 장르코드, 채널번호)}
