@@ -12,7 +12,7 @@ CHANNELS = {
     "영화": ["CINETREE", "OCN Movies2", "채널액션", "채널나우", "OCN", "OCN Movies", "더 무비", "Mplex"],
     "해외드라마": ["NXT", "채널W","channel J"],
     "해외축구": ["스포티비2", "ENA SPORTS", "tvN SPORTS","OGN","JTBC SPORTS", "스포티비"],
-    "기타" : ["디스커버리 채널","NHK WORLD Premium","CNN Int’l"],
+    "기타" : ["CNN Int’l", "디스커버리 채널", "히스토리채널","NHK WORLD Premium"],
 }
 
 def fetch_today_schedule(channel_name: str):
