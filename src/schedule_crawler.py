@@ -8,14 +8,9 @@ BASE_URL = "https://www.lguplus.com/uhdc/fo/prdv/chnlgid/v1/tv-schedule-list"
 HEADERS = {
     "accept": "application/json, text/plain, */*",
     "accept-language": "ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7",
-    "origin": "https://www.lguplus.com",
     "referer": "https://www.lguplus.com/iptv/channel-guide",
     "x-menu-url": "/iptv/channel-guide",
-    "x-user-agent-type": "PC",
-    "sec-fetch-dest": "empty",
-    "sec-fetch-mode": "cors",
-    "sec-fetch-site": "same-origin",
-    "user-agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.5 Mobile/15E148 Safari/604.1",
+    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
 }
 
 # 장르: {채널명: (채널ID, 장르코드, 채널번호)}
@@ -60,7 +55,10 @@ def fetch_today_schedule(channel_id: str, genre_code: str):
         "urcBrdCntrTvChnlId": channel_id,
         "urcBrdCntrTvChnlGnreCd": genre_code,
     }
-    res = requests.get(BASE_URL, params=params, headers=HEADERS, timeout=7)
+    #res = requests.get(BASE_URL, params=params, headers=HEADERS, timeout=7)
+    session = requests.Session()
+    session.headers.update(HEADERS)
+    res = session.get(BASE_URL, params=params,timeout=7)
     res.raise_for_status()
     data = res.json()
 
