@@ -6,11 +6,12 @@ from datetime import date
 BASE_URL = "https://www.lguplus.com/uhdc/fo/prdv/chnlgid/v1/tv-schedule-list"
 
 HEADERS = {
+    "authority":"www.lguplus.com",
     "accept": "application/json, text/plain, */*",
     "accept-language": "ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7",
     "referer": "https://www.lguplus.com/iptv/channel-guide",
     "x-menu-url": "/iptv/channel-guide",
-    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "user-agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.5 Mobile/15E148 Safari/604.1",
 }
 
 # 장르: {채널명: (채널ID, 장르코드, 채널번호)}
