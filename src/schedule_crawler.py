@@ -1,4 +1,3 @@
-#import requests
 from curl_cffi import requests
 import time
 import json
@@ -44,12 +43,18 @@ CHANNELS = {
         "더 무비": ("724", "02", "49"),
     },
     "기타": {
-        "CNN International":("729","03","200"),
-        "디스커버리":("610","04","194"),
-        "히스토리":("664","04","218"),
-        "NHK World Premium":("633","03","209"),
+        "CNN International": ("729", "03", "200"),
+        "디스커버리": ("610", "04", "194"),
+        "히스토리": ("664", "04", "218"),
+        "NHK World Premium": ("633", "03", "209"),
     }
 }
+
+
+def get_cutoff_time() -> str:
+    """평일이면 18:00, 주말(토/일)이면 09:00을 기준 시각으로 반환"""
+    is_weekend = date.today().weekday() >= 5  # 5=토요일, 6=일요일
+    return "09:00" if is_weekend else "18:00"
 
 
 def fetch_today_schedule(channel_id: str, genre_code: str):
@@ -59,10 +64,7 @@ def fetch_today_schedule(channel_id: str, genre_code: str):
         "urcBrdCntrTvChnlId": channel_id,
         "urcBrdCntrTvChnlGnreCd": genre_code,
     }
-    res = requests.get(BASE_URL, params=params, headers=HEADERS, timeout=7,impersonate="chrome")
-    #session = requests.Session()
-    #session.headers.update(HEADERS)
-    #res = session.get(BASE_URL, params=params,timeout=7)
+    res = requests.get(BASE_URL, params=params, headers=HEADERS, timeout=7, impersonate="chrome")
     res.raise_for_status()
     data = res.json()
 
@@ -81,13 +83,14 @@ def fetch_today_schedule(channel_id: str, genre_code: str):
 
 
 def build_today_schedule():
+    cutoff = get_cutoff_time()
     result = {}
     for genre, channels in CHANNELS.items():
         result[genre] = []
         for name, (channel_id, genre_code, channel_no) in channels.items():
             try:
                 programs = fetch_today_schedule(channel_id, genre_code)
-                filtered = [p for p in programs if p["time"] >= "18:00"]
+                filtered = [p for p in programs if p["time"] >= cutoff]
                 if filtered:
                     result[genre].append({
                         "channel": name,
