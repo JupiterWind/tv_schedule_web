@@ -2,7 +2,6 @@ name: Update TV Schedule
 
 on:
   schedule:
-    - cron: "0 22 * * *" # 매일 UTC 22:00 = 한국시간 오전 7시
     - cron: "0 8 * * *" # 매일 UTC 08:00 = 한국시간 오후 5시
   workflow_dispatch: # Actions 탭에서 수동 실행도 가능하게
 
