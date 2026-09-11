@@ -1,6 +1,7 @@
 from curl_cffi import requests
 import time
 import json
+import sys
 from datetime import date
 
 BASE_URL = "https://www.lguplus.com/uhdc/fo/prdv/chnlgid/v1/tv-schedule-list"
@@ -16,7 +17,6 @@ HEADERS = {
     "sec-fetch-site": "same-origin",
 }
 
-# 장르: {채널명: (채널ID, 장르코드, 채널번호)}
 CHANNELS = {
     "해외축구": {
         "스포티비2": ("638", "01", "108"),
@@ -52,8 +52,7 @@ CHANNELS = {
 
 
 def get_cutoff_time() -> str:
-    """평일이면 18:00, 주말(토/일)이면 09:00을 기준 시각으로 반환"""
-    is_weekend = date.today().weekday() >= 5  # 5=토요일, 6=일요일
+    is_weekend = date.today().weekday() >= 5
     return "09:00" if is_weekend else "18:00"
 
 
@@ -70,12 +69,12 @@ def fetch_today_schedule(channel_id: str, genre_code: str):
 
     programs = []
     for item in data.get("brdCntTvSchIDtoList") or []:
-        start_time = item.get("epgStrtTme")  # "HH:MM:SS"
+        start_time = item.get("epgStrtTme")
         title = item.get("brdPgmTitNm")
         if not start_time or not title:
             continue
         programs.append({
-            "time": start_time[:5],  # "HH:MM"
+            "time": start_time[:5],
             "title": title,
             "sub_title": item.get("brdPgmDscr"),
         })
@@ -85,9 +84,12 @@ def fetch_today_schedule(channel_id: str, genre_code: str):
 def build_today_schedule():
     cutoff = get_cutoff_time()
     result = {}
+    fail_count = 0
+    total_count = 0
     for genre, channels in CHANNELS.items():
         result[genre] = []
         for name, (channel_id, genre_code, channel_no) in channels.items():
+            total_count += 1
             try:
                 programs = fetch_today_schedule(channel_id, genre_code)
                 filtered = [p for p in programs if p["time"] >= cutoff]
@@ -98,13 +100,24 @@ def build_today_schedule():
                         "programs": filtered,
                     })
             except Exception as e:
+                fail_count += 1
                 print(f"[실패] {name}: {e}")
-            time.sleep(0.5)  # 과도한 요청 방지
-    return result
+            time.sleep(0.5)
+    return result, fail_count, total_count
 
 
 if __name__ == "__main__":
-    data = build_today_schedule()
+    data, fail_count, total_count = build_today_schedule()
+
+    # 전부(또는 대부분) 실패했으면 기존 파일을 덮어쓰지 않고 실패로 종료
+    if fail_count == total_count:
+        print(f"모든 채널({total_count}개) 요청 실패 — schedule.json을 덮어쓰지 않고 종료합니다.")
+        sys.exit(1)
+
     with open("schedule.json", "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
-    print("완료:", date.today())
+
+    if fail_count > 0:
+        print(f"완료(일부 실패 {fail_count}/{total_count}):", date.today())
+    else:
+        print("완료:", date.today())
