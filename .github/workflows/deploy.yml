@@ -2,20 +2,26 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main] # main 브랜치에 push될 때마다 실행 (master라면 master로 변경)
+    branches: [main] # 직접 push할 때는 그대로 동작
+  workflow_run:
+    workflows: ["Update TV Schedule"] # update.yml의 name과 정확히 일치해야 함
+    types: [completed]
 
 permissions:
   contents: write
 
 jobs:
   build-and-deploy:
+    if: github.event_name == 'push' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: main # workflow_run으로 트리거될 때 최신 main을 명시적으로 받기 위함
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: src # 배포할 대상 폴더명을 지정합니다.
-          branch: gh-pages # 배포된 파일들이 저장될 브랜치 이름입니다.
+          folder: src
+          branch: gh-pages
