@@ -2,9 +2,15 @@ from curl_cffi import requests
 import time
 import json
 import sys
-from datetime import date
+from datetime import date, datetime, timezone, timedelta
 
 BASE_URL = "https://www.lguplus.com/uhdc/fo/prdv/chnlgid/v1/tv-schedule-list"
+
+KST = timezone(timedelta(hours=9))
+
+def today_kst() -> date:
+    """서버(러너)의 시간대와 무관하게 항상 한국 기준 오늘 날짜를 반환"""
+    return datetime.now(KST).date()
 
 HEADERS = {
     "accept": "application/json, text/plain, */*",
@@ -19,12 +25,12 @@ HEADERS = {
 
 CHANNELS = {
      "영화": {
-        "CINETREE": ("574", "02", "50"),
+        "OCN": ("684", "02", "44"),
+        "OCN Movies": ("686", "02", "45"),
         "OCN Movies2": ("685", "02", "51"),
         "채널액션": ("593", "02", "54"),
         "채널나우": ("654", "02", "140"),
-        "OCN": ("684", "02", "44"),
-        "OCN Movies": ("686", "02", "45"),
+        "CINETREE": ("574", "02", "50"),
         "엠플렉스": ("756", "02", "48"),
         "더 무비": ("724", "02", "49"),
     },
@@ -34,14 +40,14 @@ CHANNELS = {
         "채널W": ("161", "02", "146"),
     },
     "해외축구": {
+        "스포티비": ("667", "01", "107"),
         "스포티비2": ("638", "01", "108"),
         "ENA SPORTS": ("692", "01", "112"),
         "tvN SPORTS": ("778", "01", "116"),
         "OGN": ("681", "01", "119"),
         "BallTV": ("659", "01", "126"),
         "JTBC SPORTS": ("795", "01", "102"),
-        "스포티비": ("667", "01", "107"),
-    }, 
+    },
     "기타": {
         "CNN International": ("729", "03", "200"),
         "디스커버리": ("610", "04", "194"),
@@ -51,15 +57,15 @@ CHANNELS = {
 }
 
 
-def get_cutoff_time() -> str:
-    is_weekend = date.today().weekday() >= 5
+def get_cutoff_time(today: date) -> str:
+    is_weekend = today.weekday() >= 5
     return "09:00" if is_weekend else "18:00"
 
 
-def fetch_today_schedule(channel_id: str, genre_code: str):
-    today = date.today().strftime("%Y%m%d")
+def fetch_today_schedule(channel_id: str, genre_code: str, today: date):
+    date_str = today.strftime("%Y%m%d")
     params = {
-        "brdCntrTvChnlBrdDt": today,
+        "brdCntrTvChnlBrdDt": date_str,
         "urcBrdCntrTvChnlId": channel_id,
         "urcBrdCntrTvChnlGnreCd": genre_code,
     }
@@ -82,7 +88,8 @@ def fetch_today_schedule(channel_id: str, genre_code: str):
 
 
 def build_today_schedule():
-    cutoff = get_cutoff_time()
+    today = today_kst()
+    cutoff = get_cutoff_time(today)
     result = {}
     fail_count = 0
     total_count = 0
@@ -91,7 +98,7 @@ def build_today_schedule():
         for name, (channel_id, genre_code, channel_no) in channels.items():
             total_count += 1
             try:
-                programs = fetch_today_schedule(channel_id, genre_code)
+                programs = fetch_today_schedule(channel_id, genre_code, today)
                 filtered = [p for p in programs if p["time"] >= cutoff]
                 if filtered:
                     result[genre].append({
@@ -103,13 +110,12 @@ def build_today_schedule():
                 fail_count += 1
                 print(f"[실패] {name}: {e}")
             time.sleep(0.5)
-    return result, fail_count, total_count
+    return result, fail_count, total_count, today
 
 
 if __name__ == "__main__":
-    data, fail_count, total_count = build_today_schedule()
+    data, fail_count, total_count, today = build_today_schedule()
 
-    # 전부(또는 대부분) 실패했으면 기존 파일을 덮어쓰지 않고 실패로 종료
     if fail_count == total_count:
         print(f"모든 채널({total_count}개) 요청 실패 — schedule.json을 덮어쓰지 않고 종료합니다.")
         sys.exit(1)
@@ -118,6 +124,6 @@ if __name__ == "__main__":
         json.dump(data, f, ensure_ascii=False, indent=2)
 
     if fail_count > 0:
-        print(f"완료(일부 실패 {fail_count}/{total_count}):", date.today())
+        print(f"완료(일부 실패 {fail_count}/{total_count}, 기준일 {today}):")
     else:
-        print("완료:", date.today())
+        print(f"완료(기준일 {today}):")
