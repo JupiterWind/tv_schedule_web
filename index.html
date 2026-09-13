@@ -13,6 +13,12 @@
       h1 {
         font-size: 20px;
       }
+      h1 .date {
+        font-weight: normal;
+        color: #666;
+        font-size: 15px;
+        margin-left: 8px;
+      } /* 날짜 스타일 */
       h2 {
         font-size: 16px;
         margin-top: 32px;
@@ -30,7 +36,7 @@
         color: #999;
         font-weight: normal;
         font-size: 13px;
-      } /* 채널 번호 스타일 */
+      }
       .program {
         display: flex;
         gap: 12px;
@@ -60,11 +66,23 @@
     </style>
   </head>
   <body>
-    <h1>오늘의 편성표 (오후 6시 이후)</h1>
+    <h1>오늘의 편성표 <span class="date" id="today-date"></span></h1>
     <p id="status">불러오는 중...</p>
     <div id="content"></div>
 
     <script>
+      // 제목 옆에 오늘 날짜를 "YYYY.MM.DD (요일)" 형식으로 표시
+      function renderTodayDate() {
+        const now = new Date();
+        const days = ["일", "월", "화", "수", "목", "금", "토"];
+        const y = now.getFullYear();
+        const m = String(now.getMonth() + 1).padStart(2, "0");
+        const d = String(now.getDate()).padStart(2, "0");
+        const day = days[now.getDay()];
+        document.getElementById("today-date").textContent =
+          `${y}.${m}.${d} (${day})`;
+      }
+
       async function loadSchedule() {
         try {
           const res = await fetch("schedule.json");
@@ -112,7 +130,6 @@
 
             const nameEl = document.createElement("div");
             nameEl.className = "channel-name";
-            // 채널명 옆에 채널 번호를 [ ] 형태로 표시
             nameEl.innerHTML = channel_no
               ? `${channel} <span class="channel-no">[${channel_no}]</span>`
               : channel;
@@ -137,6 +154,7 @@
         }
       }
 
+      renderTodayDate();
       loadSchedule();
     </script>
   </body>
