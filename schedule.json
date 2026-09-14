@@ -316,17 +316,22 @@
       "programs": [
         {
           "time": "18:00",
-          "title": "2026 KBO 리그<재>",
+          "title": "[아시안게임 개막 D-5] 스포타임 항저우 하이라이트<재>",
           "sub_title": null
         },
         {
-          "time": "18:20",
-          "title": "2026 KBO 아마추어 베이스볼 위크 대학야구 스페셜매치",
+          "time": "19:20",
+          "title": "[대한민국:미얀마] 2026 아시안게임",
           "sub_title": null
         },
         {
-          "time": "22:00",
-          "title": "[대한민국:미얀마] [오늘 경기] 2026 아시안게임",
+          "time": "21:30",
+          "title": "[주간 KBO 앤 MLB] 스포타임 야구랭킹쇼 (22회)",
+          "sub_title": null
+        },
+        {
+          "time": "23:00",
+          "title": "[아시안게임 개막 D-5]스포타임<재>",
           "sub_title": null
         }
       ]
@@ -378,22 +383,22 @@
       "channel_no": "116",
       "programs": [
         {
-          "time": "19:00",
+          "time": "19:05",
           "title": "2026 US오픈 테니스 대회 하이라이트<재>",
           "sub_title": null
         },
         {
-          "time": "20:00",
+          "time": "20:05",
           "title": "(본)2026 US오픈 테니스 대회 하이라이트",
           "sub_title": null
         },
         {
-          "time": "21:00",
+          "time": "21:05",
           "title": "[조슈아 반:알레샨드리 판토자] (본)UFC PREVIEW Fight Show (180회)",
           "sub_title": null
         },
         {
-          "time": "23:00",
+          "time": "23:05",
           "title": "[이슬람 마카체프:이안 개리] UFC 330 하이라이트 (58회)<재>",
           "sub_title": null
         }
