@@ -11,7 +11,7 @@
         },
         {
           "time": "23:00",
-          "title": "사일런트 존",
+          "title": "범죄도시",
           "sub_title": null
         }
       ]
@@ -21,13 +21,18 @@
       "channel_no": "45",
       "programs": [
         {
-          "time": "19:20",
+          "time": "19:30",
           "title": "잭 리처2:네버 고 백",
           "sub_title": null
         },
         {
           "time": "21:30",
-          "title": "암살",
+          "title": "조작된 도시",
+          "sub_title": null
+        },
+        {
+          "time": "23:40",
+          "title": "공공의 적",
           "sub_title": null
         }
       ]
@@ -53,12 +58,12 @@
       "channel_no": "54",
       "programs": [
         {
-          "time": "19:30",
+          "time": "19:35",
           "title": "반헬싱 [1부]",
           "sub_title": null
         },
         {
-          "time": "20:50",
+          "time": "21:00",
           "title": "반헬싱 [2부]",
           "sub_title": null
         },
@@ -68,7 +73,7 @@
           "sub_title": null
         },
         {
-          "time": "23:10",
+          "time": "23:00",
           "title": "괴물 [2부]",
           "sub_title": null
         }
@@ -79,17 +84,17 @@
       "channel_no": "140",
       "programs": [
         {
-          "time": "18:50",
+          "time": "18:46",
           "title": "용감한 형사들 5 (18회)",
           "sub_title": "빌런 쓸어담는 최강 형사들이 떴다! 현직 형사들의 빌런 처단썰 대 공개!"
         },
         {
-          "time": "20:10",
+          "time": "20:05",
           "title": "윌 트렌트 1 (3회)<재>",
           "sub_title": null
         },
         {
-          "time": "21:05",
+          "time": "21:04",
           "title": "윌 트렌트 1 (4회)<재>",
           "sub_title": null
         },
@@ -99,7 +104,7 @@
           "sub_title": null
         },
         {
-          "time": "23:05",
+          "time": "23:06",
           "title": "윌 트렌트 1 (6회)",
           "sub_title": null
         }
@@ -146,19 +151,34 @@
       "channel_no": "48",
       "programs": [
         {
-          "time": "18:00",
-          "title": "리볼버",
+          "time": "18:22",
+          "title": "리볼버 [1부]<재>",
           "sub_title": "불법 도박의 누명을 쓰고 7년 동안 독방에서 출소의 그 날 만을 기다리며 치밀한 복수의 계획을 세운 제이크 그린. 그를 감옥으로 보낸 도로시 역시 제이크의 석방만을 기다리며 기회를 노리고 있었다. 하지만 서.."
         },
         {
-          "time": "20:00",
-          "title": "인질교섭",
+          "time": "19:26",
+          "title": "리볼버 [2부]<재>",
+          "sub_title": "불법 도박의 누명을 쓰고 7년 동안 독방에서 출소의 그 날 만을 기다리며 치밀한 복수의 계획을 세운 제이크 그린. 그를 감옥으로 보낸 도로시 역시 제이크의 석방만을 기다리며 기회를 노리고 있었다. 하지만 서.."
+        },
+        {
+          "time": "20:28",
+          "title": "인질교섭 [1부]",
           "sub_title": null
         },
         {
-          "time": "22:00",
-          "title": "실미도",
+          "time": "21:31",
+          "title": "인질교섭 [2부]",
           "sub_title": null
+        },
+        {
+          "time": "22:35",
+          "title": "실미도 [1부]<재>",
+          "sub_title": "월북한 아버지 때문에 한국 사회 어느 곳에서도 인간 대접을 받을 수 없는 강인찬(설경구 분)은 뒷골목을 전전하다 살인미수로 수감되고, 사형을 언도 받고 사형장으로 끌려간다. 그러나 그가 도착한 곳은 사형장.."
+        },
+        {
+          "time": "23:36",
+          "title": "실미도 [2부]<재>",
+          "sub_title": "월북한 아버지 때문에 한국 사회 어느 곳에서도 인간 대접을 받을 수 없는 강인찬(설경구 분)은 뒷골목을 전전하다 살인미수로 수감되고, 사형을 언도 받고 사형장으로 끌려간다. 그러나 그가 도착한 곳은 사형장.."
         }
       ]
     },
@@ -354,17 +374,17 @@
       "programs": [
         {
           "time": "19:00",
-          "title": "[조슈아 반:알레샨드리 판토자] UFC PREVIEW Fight Show<재>",
+          "title": "[조슈아 반:알레샨드리 판토자] UFC PREVIEW Fight Show (180회)<재>",
           "sub_title": null
         },
         {
           "time": "21:00",
-          "title": "UFC THE MOMENT (3회)",
+          "title": "(본)UFC THE MOMENT (3회)",
           "sub_title": null
         },
         {
           "time": "23:00",
-          "title": "UFC SPECIAL<재>",
+          "title": "UFC SPECIAL (44회)<재>",
           "sub_title": null
         }
       ]
@@ -409,11 +429,6 @@
       "channel": "BallTV",
       "channel_no": "126",
       "programs": [
-        {
-          "time": "18:00",
-          "title": "(LIVE)제14회 세계 여자 3쿠션 선수권대회 (1회)",
-          "sub_title": null
-        },
         {
           "time": "20:00",
           "title": "(LIVE)제14회 세계 여자 3쿠션 선수권대회 (1회)",
