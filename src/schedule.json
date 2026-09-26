@@ -710,7 +710,7 @@
       "channel_no": "107",
       "programs": [
         {
-          "time": "10:40",
+          "time": "10:25",
           "title": "2026 아시안게임",
           "sub_title": null
         },
@@ -730,13 +730,18 @@
           "sub_title": null
         },
         {
-          "time": "20:30",
+          "time": "20:00",
+          "title": "[대만:일본] 2026 아시안게임",
+          "sub_title": null
+        },
+        {
+          "time": "21:30",
           "title": "스포타임 아시안게임 NOW",
           "sub_title": null
         },
         {
           "time": "22:30",
-          "title": "[오늘 경기] 2026 아시안게임",
+          "title": "[대한민국:중국] [오늘 경기] 2026 아시안게임",
           "sub_title": null
         }
       ]
@@ -747,12 +752,12 @@
       "programs": [
         {
           "time": "09:00",
-          "title": "[롯데:두산] 2026 KBO리그 하이라이트",
+          "title": "스포타임 아시안게임<재>",
           "sub_title": null
         },
         {
           "time": "10:30",
-          "title": "2026 아시안게임",
+          "title": "스포타임 아시안게임",
           "sub_title": null
         },
         {
@@ -762,7 +767,7 @@
         },
         {
           "time": "13:00",
-          "title": "[대한민국:일본] 2026 아시안게임",
+          "title": "[대한민국:중국] 2026 아시안게임",
           "sub_title": null
         },
         {
@@ -782,12 +787,12 @@
         },
         {
           "time": "21:30",
-          "title": "[LA 다저스:샌프란시스코] [오늘 경기] 2026 메이저리그<재>",
+          "title": "[대한민국:일본] [오늘 경기] 2026 아시안게임",
           "sub_title": null
         },
         {
-          "time": "23:00",
-          "title": "[오늘 경기] 스포타임 풋볼 하이라이트",
+          "time": "23:30",
+          "title": "스포타임 아시안게임",
           "sub_title": null
         }
       ]
@@ -797,23 +802,18 @@
       "channel_no": "112",
       "programs": [
         {
-          "time": "10:30",
-          "title": "[코스타리카:퀴라소] 2026-2027 북중미 네이션스리그<재>",
-          "sub_title": null
-        },
-        {
-          "time": "12:40",
+          "time": "10:45",
           "title": "[인도네시아:싱가포르] 2026 FIFA 아세안컵<재>",
           "sub_title": null
         },
         {
-          "time": "14:50",
+          "time": "13:00",
           "title": "2026 아시아 배드민턴선수권<재>",
           "sub_title": null
         },
         {
-          "time": "16:20",
-          "title": "[대한민국:인도] [로드 투 FINAL 8] 2026 데이비스컵 2차 최종본선진출전<재>",
+          "time": "15:05",
+          "title": "[대한민국:인도] [권순우 BEST] 2026 데이비스컵 2차 최종본선진출전<재>",
           "sub_title": null
         },
         {
@@ -844,17 +844,17 @@
         },
         {
           "time": "11:00",
-          "title": "(본)2026 레이버컵 하이라이트 (3회)",
+          "title": "(생)코리아오픈 테니스대회 2026",
           "sub_title": null
         },
         {
           "time": "12:00",
-          "title": "(본)2026 레이버컵 하이라이트 (4회)",
+          "title": "(생)코리아오픈 테니스대회 2026",
           "sub_title": null
         },
         {
           "time": "13:00",
-          "title": "(본)코리아오픈 테니스대회 2026 하이라이트",
+          "title": "코리아오픈 테니스대회 2026 하이라이트<재>",
           "sub_title": null
         },
         {
@@ -1185,7 +1185,7 @@
         },
         {
           "time": "21:00",
-          "title": "First of All With Victor Blackwell (39회)",
+          "title": "CNN This Morning Weekend (154회)",
           "sub_title": null
         },
         {
