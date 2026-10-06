@@ -362,13 +362,18 @@
       "channel_no": "112",
       "programs": [
         {
-          "time": "19:40",
-          "title": "[에버턴:버밍엄] 2026-2027 BWSL<재>",
+          "time": "19:30",
+          "title": "[맨시티:아스날] 2026-2027 BWSL<재>",
           "sub_title": null
         },
         {
-          "time": "21:50",
+          "time": "21:40",
           "title": "[말레이시아:베트남] 2026 FIFA 아세안컵<재>",
+          "sub_title": null
+        },
+        {
+          "time": "23:50",
+          "title": "[인도네시아:태국] 2026 FIFA 아세안컵<재>",
           "sub_title": null
         }
       ]
