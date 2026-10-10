@@ -797,22 +797,22 @@
         },
         {
           "time": "18:00",
-          "title": "[LG:롯데] [오늘 경기] 2026 KBO리그<재>",
+          "title": "스포타임 손흥민 스페셜<재>",
           "sub_title": null
         },
         {
-          "time": "20:00",
+          "time": "19:30",
+          "title": "2026 WTT 탁구 중국 스매시",
+          "sub_title": null
+        },
+        {
+          "time": "20:30",
           "title": "[다시 보는 아시안게임 명경기]2026 아시안게임<재>",
           "sub_title": null
         },
         {
-          "time": "22:00",
-          "title": "스포타임 메이저리그",
-          "sub_title": null
-        },
-        {
-          "time": "23:00",
-          "title": "스포타임 손흥민 스페셜<재>",
+          "time": "22:30",
+          "title": "[LG:롯데] [오늘 경기] 2026 KBO리그 하이라이트",
           "sub_title": null
         }
       ]
@@ -822,22 +822,17 @@
       "channel_no": "112",
       "programs": [
         {
-          "time": "09:00",
-          "title": "[에버턴:버밍엄] 2026-2027 BWSL<재>",
-          "sub_title": null
-        },
-        {
           "time": "11:05",
           "title": "[대한민국:대만] [전승 우승] 2026 AVC컵 여자배구대회<재>",
           "sub_title": null
         },
         {
-          "time": "13:05",
+          "time": "13:00",
           "title": "[안세영 그랜드슬램] 2026 아시아배드민턴선수권<재>",
           "sub_title": null
         },
         {
-          "time": "16:05",
+          "time": "16:00",
           "title": "2026-2027 BWSL 하이라이트",
           "sub_title": null
         },
