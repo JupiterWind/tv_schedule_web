@@ -807,7 +807,7 @@
       "channel_no": "112",
       "programs": [
         {
-          "time": "10:50",
+          "time": "10:55",
           "title": "[나바레테:누네스] 2026 : BOXING WBO IBF 주니어라이트급 세계통합타이틀전",
           "sub_title": null
         },
@@ -818,7 +818,7 @@
         },
         {
           "time": "13:40",
-          "title": "[질 비센트:포르투] 2026-2027 프리메이라리가<재>",
+          "title": "[질 비센트:포르투] [황인범 교체출전] 2026-2027 프리메이라리가<재>",
           "sub_title": null
         },
         {
@@ -848,23 +848,13 @@
       "channel_no": "116",
       "programs": [
         {
-          "time": "09:30",
+          "time": "09:40",
           "title": "[알렉산더 볼카노프스키:모프사르 예블로예프] (본)UFC REVIEW Fight Show (134회)",
           "sub_title": null
         },
         {
-          "time": "10:00",
+          "time": "10:10",
           "title": "[알렉산더 볼카노프스키:모프사르 예블로예프] UFC 333 (61회)<재>",
-          "sub_title": null
-        },
-        {
-          "time": "13:00",
-          "title": "[알렉산더 볼카노프스키:모프사르 예블로예프] UFC REVIEW Fight Show (134회)<재>",
-          "sub_title": null
-        },
-        {
-          "time": "13:30",
-          "title": "UFC SPECIAL<재>",
           "sub_title": null
         },
         {
@@ -884,7 +874,7 @@
         },
         {
           "time": "20:30",
-          "title": "(본)26-27 KBL 하이라이트",
+          "title": "[SK:KT] (본)26-27 KBL 하이라이트",
           "sub_title": null
         },
         {
