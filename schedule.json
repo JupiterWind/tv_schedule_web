@@ -331,7 +331,7 @@
         },
         {
           "time": "21:00",
-          "title": "스포타임 베이스볼 하이라이트",
+          "title": "[KIA:삼성] 스포타임 베이스볼 하이라이트",
           "sub_title": null
         },
         {
@@ -387,23 +387,18 @@
       "channel_no": "112",
       "programs": [
         {
-          "time": "18:15",
-          "title": "[나시오날:브라가] 2026-2027 프리메이라리가<재>",
-          "sub_title": null
-        },
-        {
-          "time": "20:30",
+          "time": "19:00",
           "title": "2026-2027 BWSL 하이라이트",
           "sub_title": null
         },
         {
-          "time": "21:20",
-          "title": "[나바레테:포스터 외] 2026 : BOXING 복싱 3대기구 슈퍼페더급 세계통합타이틀전<재>",
+          "time": "20:10",
+          "title": "[칠리치:장지젠] 유진투자증권 2026 ATP 챌린저 서울 오픈",
           "sub_title": null
         },
         {
-          "time": "23:30",
-          "title": "[나시오날:브라가] 2026-2027 프리메이라리가<재>",
+          "time": "21:50",
+          "title": "[나시오날:브라가] [송민규 시즌 첫 도움] 2026-2027 프리메이라리가<재>",
           "sub_title": null
         }
       ]
@@ -412,11 +407,6 @@
       "channel": "tvN SPORTS",
       "channel_no": "116",
       "programs": [
-        {
-          "time": "18:00",
-          "title": "(본)KBL ZONE",
-          "sub_title": null
-        },
         {
           "time": "19:00",
           "title": "[소노:LG] (생)2026-2027 KCC 프로농구",
