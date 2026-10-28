@@ -26,11 +26,6 @@
       "channel_no": "45",
       "programs": [
         {
-          "time": "18:00",
-          "title": "암살",
-          "sub_title": null
-        },
-        {
           "time": "20:40",
           "title": "밀수",
           "sub_title": "열길 물속은 알아도 한길 사람 속은 모른다! 평화롭던 바닷가 마을 군천에 화학 공장이 들어서면서 하루아침에 일자리를 잃은 해녀들. 먹고 살기 위한 방법을 찾던 승부사 춘자(김혜수)는 바다 속에 던진 물건을 .."
@@ -46,11 +41,6 @@
       "channel": "OCN Movies2",
       "channel_no": "51",
       "programs": [
-        {
-          "time": "18:00",
-          "title": "백 투 더 퓨쳐",
-          "sub_title": null
-        },
         {
           "time": "20:10",
           "title": "지옥의 화원",
@@ -351,7 +341,7 @@
         },
         {
           "time": "21:00",
-          "title": "스포타임 베이스볼 하이라이트",
+          "title": "스포타임 베이스볼 하이라이트<재>",
           "sub_title": null
         },
         {
@@ -377,12 +367,12 @@
       "programs": [
         {
           "time": "18:30",
-          "title": "스포타임 배드민턴",
+          "title": "스포타임 야구랭킹쇼<재>",
           "sub_title": null
         },
         {
-          "time": "21:00",
-          "title": "스포타임 야구랭킹쇼<재>",
+          "time": "20:00",
+          "title": "스포타임 배드민턴",
           "sub_title": null
         },
         {
@@ -397,17 +387,12 @@
       "channel_no": "112",
       "programs": [
         {
-          "time": "18:30",
-          "title": "[안세영:왕쯔이] [안세영 그랜드슬램] 2026 아시아배드민턴선수권<재>",
-          "sub_title": null
-        },
-        {
-          "time": "20:45",
+          "time": "20:50",
           "title": "[질 비센트:포르투] [황인범 교체출전] 2026-2027 프리메이라리가<재>",
           "sub_title": null
         },
         {
-          "time": "22:55",
+          "time": "23:00",
           "title": "[토트넘:아스날] 2026-2027 BWSL<재>",
           "sub_title": null
         }
@@ -417,11 +402,6 @@
       "channel": "tvN SPORTS",
       "channel_no": "116",
       "programs": [
-        {
-          "time": "18:00",
-          "title": "KBL ZONE<재>",
-          "sub_title": null
-        },
         {
           "time": "19:00",
           "title": "[한국가스공사:DB] (생)2026-2027 KCC 프로농구",
@@ -434,7 +414,7 @@
         },
         {
           "time": "22:00",
-          "title": "(본)UFC THE FINISH",
+          "title": "(본)UFC THE FINISH (8회)",
           "sub_title": null
         }
       ]
